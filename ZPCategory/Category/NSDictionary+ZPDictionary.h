@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (ZPDictionary)
 
-#pragma mark - 数据类型的判断
+#pragma mark - 数据类型的Get
 
 /**
  设置一个BOOL值

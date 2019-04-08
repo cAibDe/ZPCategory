@@ -18,7 +18,7 @@ typedef void (^ActionBlock)(void);
  *  @param controlEvent 触摸事件
  *  @param action 执行的方法
  */
-- (void) handleControlEvent:(UIControlEvents)controlEvent withBlock:(ActionBlock)action;
+- (void)handleControlEvent:(UIControlEvents)controlEvent withBlock:(ActionBlock)action;
 
 @end
 
