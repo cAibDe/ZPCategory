@@ -284,6 +284,9 @@
  *  @return NSAttributedString
  */
 - (NSAttributedString *)toAttributeStringWithLineSpacing:(float)lineSpacing{
+    if ([self isBlankString]) {
+        return [[NSMutableAttributedString alloc] initWithString:@""];
+    }
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];//调整行间距
