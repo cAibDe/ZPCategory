@@ -118,6 +118,33 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSAttributedString
  */
 - (NSAttributedString *)toAttributeStringWithLineSpacing:(float)lineSpacing;
+#pragma mark - NSString 计算字节长度
+/**
+ 计算字符串的字节长度
+ * 中文 = 2
+ * 英文或者数字 = 1
+ * 表情 = 4
+ 
+ @return NSUInteger
+ */
+- (NSUInteger)charactorNumber;
+
+/**
+ 根据不同的编码方式计算字节长度
+ 
+ @param encoding 编码方式
+ @return NSUInteger
+ */
+- (NSUInteger)charactorNumberWithEncoding:(NSStringEncoding)encoding;
+
+/**
+ calulate the number of charactor.
+ 1 Chinese(not including Chinese mark) = 2
+ 1 other charactor = 1
+ 
+ @return NSUInteger
+ */
+- (NSUInteger)charactorNumberForChineseSpecial;
 
 #pragma mark - 字符串加密
 /**
