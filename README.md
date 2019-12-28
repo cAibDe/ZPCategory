@@ -29,21 +29,21 @@
 ## NSString  
 
 ### 字符串宽度&&高度  
-1.根据字体&高度，获取字符串的宽度（没有行高）
 ```objc
-- (float)widthWithFont:(UIFont *)font height:(float)height;
-```
-2.根据字体&宽度，获取字符串的高度（没有行高）
-```objc
-- (float)heightWithFont:(UIFont *)font width:(float)width;
-```
-3.根据字体&宽度&行高，获取字符串改的高度；
-```objc
-- (float)heightWithFont:(UIFont *)font width:(float)width lineSpacing:(float)lineSpacing;
-```
-4.根据字体&宽度&行高，获取字符串的Size；
-```objc
-- (CGSize)sizeWithFont:(UIFont *)font width:(float)width lineSpacing:(float)lineSpacing;
+/**
+*
+*  size             预计的大小
+*  font             字体大小
+*  alignment        对齐方式
+*  linebreakMode    显示模式
+*  lineSpace        行间距
+*
+*/
+- (CGSize)calculateRectWithSize:(CGSize)size
+                           font:(UIFont *)font
+                      alignment:(NSTextAlignment)alignment
+                  linebreakMode:(NSLineBreakMode)linebreakMode
+                      lineSpace:(CGFloat)lineSpace;
 ```
 ### 字符串 正则表达式  
 1.判断是不是手机号
@@ -86,9 +86,19 @@
 ```  
 
 ### NSString->NSAttributedString
-1.NSString->NSAttributedString 带有行高属性
 ```objc
-- (NSAttributedString *)toAttributeStringWithLineSpacing:(float)lineSpacing;
+/**
+*  转成NSMutableAttributedString
+*
+*  @param string    字符串
+*  @param font      字体
+*  @param lineSpace 行间距
+*
+*  @return NSAttributedString
+*/
+- (NSMutableAttributedString *)toAttributeStringWithString:(NSString *)string
+                                                      font:(UIFont *)font
+                                                 lineSpace:(CGFloat)lineSpace;
 ```  
 ### NSString 计算字节长度
 ```objc 
