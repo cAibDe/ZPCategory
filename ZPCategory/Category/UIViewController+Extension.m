@@ -1,24 +1,25 @@
 //
-//  UIViewController+ZPViewController.m
+//  UIViewController+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "UIViewController+ZPViewController.h"
-#import "UIButton+ZPButton.h"
+#import "UIViewController+Extension.h"
+#import "UIButton+Extension.h"
 
 #define kNavigationBarDefaultTitleColor [UIColor whiteColor]
 #define kNavigationBarDefaultTitleFont  [UIFont systemFontOfSize:16.0f]
 
-@implementation UIViewController (ZPViewController)
+@implementation UIViewController (Extension)
+#pragma mark - NavigationBar
+/**
+*  设置左侧Navigationbar为“返回”（使用backBarButtonItem）
+*/
 - (void)setLeftNavigationBarToBack {
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回"
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:nil action:nil];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButtonItem;
-    
 }
 
 /**
@@ -51,32 +52,60 @@
         [weakself presentViewController:alert animated:YES completion:nil];
     }];
 }
-
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text touched:(void (^)(void))block {
-    [self setNavigationBar:position withText:text withColor:kNavigationBarDefaultTitleColor touched:block];
+/**
+*  设置NavigationBar（文字）
+*
+*  @param position 位置
+*  @param text     文字
+*  @param block    点击后执行的代码
+*/
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+                 touched:(void (^)(void))block {
+    [self setNavigationBar:position
+                  withText:text
+                 withColor:kNavigationBarDefaultTitleColor
+                   touched:block];
 }
 
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text withColor:(UIColor *)color touched:(void (^)(void))block {
-    [self setNavigationBar:position withText:text withColor:color withFont:kNavigationBarDefaultTitleFont touched:block];
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+               withColor:(UIColor *)color
+                 touched:(void (^)(void))block {
+    [self setNavigationBar:position
+                  withText:text
+                 withColor:color
+                  withFont:kNavigationBarDefaultTitleFont
+                   touched:block];
 }
 
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text withColor:(UIColor *)color withFont:(UIFont *)font touched:(void (^)(void))block {
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+               withColor:(UIColor *)color
+                withFont:(UIFont *)font
+                 touched:(void (^)(void))block {
     UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
     [btn.titleLabel setFont:font];
-    [btn setTitleColor:color forState:UIControlStateNormal];
-    [btn setTitle:text forState:UIControlStateNormal];
+    [btn setTitleColor:color
+              forState:UIControlStateNormal];
+    [btn setTitle:text
+         forState:UIControlStateNormal];
     CGRect statusBarRect = [[UIApplication sharedApplication] statusBarFrame];
     CGSize size = CGSizeMake(MAXFLOAT, statusBarRect.size.height + 44.0);
     NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:btn.titleLabel.font,NSFontAttributeName,nil];
-    CGSize  actualsize =[text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
+    CGSize  actualsize =[text boundingRectWithSize:size
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:tdic
+                                           context:nil].size;
     
     btn.frame = CGRectMake(0.0f, 0.0f, actualsize.width+16, 30);
     
     if (block) {
-        [btn handleControlEvent:UIControlEventTouchUpInside withBlock:block];
+        [btn handleControlEvent:UIControlEventTouchUpInside
+                      withBlock:block];
     }
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSpacer.width=-15;
@@ -96,21 +125,25 @@
  *  @param imageName 图片名称
  *  @param block     点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withImageName:(NSString *)imageName touched:(void (^)(void))block {
+- (void)setNavigationBar:(NavigationBarPosition)position
+           withImageName:(NSString *)imageName
+                 touched:(void (^)(void))block {
     UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
     
     UIImage *img = [UIImage imageNamed:imageName];
-    [btn setImage:img forState:UIControlStateNormal];
+    [btn setImage:img
+         forState:UIControlStateNormal];
     
     CGFloat width = MAX(img.size.width, 22);
     CGRect statusBarRect = [[UIApplication sharedApplication] statusBarFrame];
     btn.frame = CGRectMake(0.0f, 0.0f, width, statusBarRect.size.height + 44.0);
     
     if (block) {
-        [btn handleControlEvent:UIControlEventTouchUpInside withBlock:block];
+        [btn handleControlEvent:UIControlEventTouchUpInside
+                      withBlock:block];
     }
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSpacer.width = -8;
@@ -129,17 +162,22 @@
  *  @param imageName 图片名称
  *  @param block     点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withImageName:(NSString *)imageName spacing:(NSInteger)spacing touched:(void (^)(void))block {
+- (void)setNavigationBar:(NavigationBarPosition)position
+           withImageName:(NSString *)imageName
+                 spacing:(NSInteger)spacing
+                 touched:(void (^)(void))block {
     UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:imageName]
+         forState:UIControlStateNormal];
     CGRect statusBarRect = [[UIApplication sharedApplication] statusBarFrame];
     btn.frame = CGRectMake(0.0f, 0.0f, 44.0f, statusBarRect.size.height + 44.0);
     
     if (block) {
-        [btn handleControlEvent:UIControlEventTouchUpInside withBlock:block];
+        [btn handleControlEvent:UIControlEventTouchUpInside
+                      withBlock:block];
     }
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     //    negativeSpacer.width=-7;
@@ -159,7 +197,8 @@
  *  @param position 位置
  *  @param hidden   YES：隐藏 NO：显示
  */
-- (void)hiddenNavigationBar:(NavigationBarPosition)position hidden:(BOOL)hidden {
+- (void)hiddenNavigationBar:(NavigationBarPosition)position
+                     hidden:(BOOL)hidden{
     NSArray *buttonArray = nil;
     
     if (NavigationBarPositionLeft == position) {
@@ -175,52 +214,6 @@
         }
     }
 }
-
-- (void)popToViewController:(Class)viewControllerClass {
-    NSArray *arr = self.navigationController.viewControllers;
-    for (int i=0;i<arr.count;i++) {
-        UIViewController *v = [self.navigationController.viewControllers objectAtIndex:i];
-        if([v isKindOfClass:viewControllerClass])
-        {
-            [self.navigationController popToViewController:v animated:YES];
-            break;
-        }
-    }
-}
-/**
- *  移除navigationbutton
- *
- *  @param position 位置
- */
-- (void)removeNavigationBarBar:(NavigationBarPosition)position {
-    NSArray *buttonArray = nil;
-    if (NavigationBarPositionLeft == position) {
-        
-        self.navigationItem.leftBarButtonItems = buttonArray;
-        
-    }else if(NavigationBarPositionRight == position){
-        
-        self.navigationItem.rightBarButtonItems = buttonArray;
-        
-    }
-}
-
-
-/**
- *  NavigationController里上一个ViewController
- *
- */
-- (UIViewController *)previosViewController {
-    
-    NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
-    if (index >= 1) {
-        
-        return [self.navigationController.viewControllers objectAtIndex:(index-1)];
-    }
-    
-    return nil;
-}
-
 /**
  *  移除当前NavigationController里ViewController的上一个ViewController
  */
@@ -272,7 +265,51 @@
         self.navigationItem.leftBarButtonItems= items;
     }
 }
+#pragma mark - 页面 PUSH&POP
+- (void)popToViewController:(Class)viewControllerClass {
+    NSArray *arr = self.navigationController.viewControllers;
+    for (int i=0;i<arr.count;i++) {
+        UIViewController *v = [self.navigationController.viewControllers objectAtIndex:i];
+        if([v isKindOfClass:viewControllerClass])
+        {
+            [self.navigationController popToViewController:v animated:YES];
+            break;
+        }
+    }
+}
+/**
+ *  移除navigationbutton
+ *
+ *  @param position 位置
+ */
+- (void)removeNavigationBarBar:(NavigationBarPosition)position {
+    NSArray *buttonArray = nil;
+    if (NavigationBarPositionLeft == position) {
+        
+        self.navigationItem.leftBarButtonItems = buttonArray;
+        
+    }else if(NavigationBarPositionRight == position){
+        
+        self.navigationItem.rightBarButtonItems = buttonArray;
+        
+    }
+}
 
+
+/**
+ *  NavigationController里上一个ViewController
+ *
+ */
+- (UIViewController *)previosViewController {
+    
+    NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
+    if (index >= 1) {
+        
+        return [self.navigationController.viewControllers objectAtIndex:(index-1)];
+    }
+    
+    return nil;
+}
 #pragma mark - StoryBoard
 /**
  *  从storyboard中初始化ViewController

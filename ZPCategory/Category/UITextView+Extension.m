@@ -1,13 +1,13 @@
 //
-//  UITextView+ZPTextView.m
+//  UITextView+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "UITextView+ZPTextView.h"
-@implementation UITextView (ZPTextView)
+#import "UITextView+Extension.h"
+@implementation UITextView (Extension)
 @dynamic placeHolder;
 @dynamic placeHolderFont;
 - (void)setPlaceHolder:(NSString *)placeHolder {

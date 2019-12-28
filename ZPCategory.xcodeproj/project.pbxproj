@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E3533ED2253312700FD5030 /* UIImage+ZPImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3533EC2253312700FD5030 /* UIImage+ZPImage.m */; };
+		6E3533ED2253312700FD5030 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3533EC2253312700FD5030 /* UIImage+Extension.m */; };
+		6E59D18323B72D8B00C12E01 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E59D18223B72D8B00C12E01 /* UIView+Extension.m */; };
 		6E6919FF2251FC6100E67891 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6919FE2251FC6100E67891 /* AppDelegate.m */; };
 		6E691A022251FC6100E67891 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A012251FC6100E67891 /* ViewController.m */; };
 		6E691A052251FC6100E67891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E691A032251FC6100E67891 /* Main.storyboard */; };
@@ -16,14 +17,14 @@
 		6E691A0D2251FC6300E67891 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A0C2251FC6300E67891 /* main.m */; };
 		6E691A172251FC6300E67891 /* ZPCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A162251FC6300E67891 /* ZPCategoryTests.m */; };
 		6E691A222251FC6300E67891 /* ZPCategoryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A212251FC6300E67891 /* ZPCategoryUITests.m */; };
-		6E691A322251FE1800E67891 /* NSString+ZPString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A312251FE1800E67891 /* NSString+ZPString.m */; };
-		6E691A352252062A00E67891 /* UITextField+ZPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A342252062A00E67891 /* UITextField+ZPTextField.m */; };
-		6E691A382252115200E67891 /* UITextView+ZPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A372252115200E67891 /* UITextView+ZPTextView.m */; };
-		6E691A3B2252121800E67891 /* NSDictionary+ZPDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3A2252121800E67891 /* NSDictionary+ZPDictionary.m */; };
-		6E691A3E2252143D00E67891 /* NSDate+ZPDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3D2252143D00E67891 /* NSDate+ZPDate.m */; };
-		6E691A412252170400E67891 /* UIViewController+ZPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A402252170400E67891 /* UIViewController+ZPViewController.m */; };
-		6E691A4422521B3A00E67891 /* UIButton+ZPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4322521B3A00E67891 /* UIButton+ZPButton.m */; };
-		6E691A4722521CA400E67891 /* NSTimer+ZPtimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4622521CA400E67891 /* NSTimer+ZPtimer.m */; };
+		6E691A322251FE1800E67891 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A312251FE1800E67891 /* NSString+Extension.m */; };
+		6E691A352252062A00E67891 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A342252062A00E67891 /* UITextField+Extension.m */; };
+		6E691A382252115200E67891 /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A372252115200E67891 /* UITextView+Extension.m */; };
+		6E691A3B2252121800E67891 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3A2252121800E67891 /* NSDictionary+Extension.m */; };
+		6E691A3E2252143D00E67891 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3D2252143D00E67891 /* NSDate+Extension.m */; };
+		6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A402252170400E67891 /* UIViewController+Extension.m */; };
+		6E691A4422521B3A00E67891 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4322521B3A00E67891 /* UIButton+Extension.m */; };
+		6E691A4722521CA400E67891 /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4622521CA400E67891 /* NSTimer+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E3533EB2253312700FD5030 /* UIImage+ZPImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZPImage.h"; sourceTree = "<group>"; };
-		6E3533EC2253312700FD5030 /* UIImage+ZPImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZPImage.m"; sourceTree = "<group>"; };
+		6E3533EB2253312700FD5030 /* UIImage+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		6E3533EC2253312700FD5030 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		6E59D18123B72D8B00C12E01 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		6E59D18223B72D8B00C12E01 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		6E6919FA2251FC6100E67891 /* ZPCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6919FD2251FC6100E67891 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E6919FE2251FC6100E67891 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,22 +65,22 @@
 		6E691A1D2251FC6300E67891 /* ZPCategoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPCategoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E691A212251FC6300E67891 /* ZPCategoryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPCategoryUITests.m; sourceTree = "<group>"; };
 		6E691A232251FC6300E67891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E691A302251FE1800E67891 /* NSString+ZPString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ZPString.h"; sourceTree = "<group>"; };
-		6E691A312251FE1800E67891 /* NSString+ZPString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZPString.m"; sourceTree = "<group>"; };
-		6E691A332252062A00E67891 /* UITextField+ZPTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZPTextField.h"; sourceTree = "<group>"; };
-		6E691A342252062A00E67891 /* UITextField+ZPTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZPTextField.m"; sourceTree = "<group>"; };
-		6E691A362252115200E67891 /* UITextView+ZPTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZPTextView.h"; sourceTree = "<group>"; };
-		6E691A372252115200E67891 /* UITextView+ZPTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZPTextView.m"; sourceTree = "<group>"; };
-		6E691A392252121800E67891 /* NSDictionary+ZPDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZPDictionary.h"; sourceTree = "<group>"; };
-		6E691A3A2252121800E67891 /* NSDictionary+ZPDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZPDictionary.m"; sourceTree = "<group>"; };
-		6E691A3C2252143D00E67891 /* NSDate+ZPDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZPDate.h"; sourceTree = "<group>"; };
-		6E691A3D2252143D00E67891 /* NSDate+ZPDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZPDate.m"; sourceTree = "<group>"; };
-		6E691A3F2252170400E67891 /* UIViewController+ZPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZPViewController.h"; sourceTree = "<group>"; };
-		6E691A402252170400E67891 /* UIViewController+ZPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZPViewController.m"; sourceTree = "<group>"; };
-		6E691A4222521B3A00E67891 /* UIButton+ZPButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZPButton.h"; sourceTree = "<group>"; };
-		6E691A4322521B3A00E67891 /* UIButton+ZPButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZPButton.m"; sourceTree = "<group>"; };
-		6E691A4522521CA400E67891 /* NSTimer+ZPtimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ZPtimer.h"; sourceTree = "<group>"; };
-		6E691A4622521CA400E67891 /* NSTimer+ZPtimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZPtimer.m"; sourceTree = "<group>"; };
+		6E691A302251FE1800E67891 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		6E691A312251FE1800E67891 /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		6E691A332252062A00E67891 /* UITextField+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
+		6E691A342252062A00E67891 /* UITextField+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
+		6E691A362252115200E67891 /* UITextView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extension.h"; sourceTree = "<group>"; };
+		6E691A372252115200E67891 /* UITextView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extension.m"; sourceTree = "<group>"; };
+		6E691A392252121800E67891 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		6E691A3A2252121800E67891 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		6E691A3C2252143D00E67891 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		6E691A3D2252143D00E67891 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		6E691A3F2252170400E67891 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		6E691A402252170400E67891 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		6E691A4222521B3A00E67891 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		6E691A4322521B3A00E67891 /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		6E691A4522521CA400E67891 /* NSTimer+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Extension.h"; sourceTree = "<group>"; };
+		6E691A4622521CA400E67891 /* NSTimer+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Extension.m"; sourceTree = "<group>"; };
 		6E691A4822521EF900E67891 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,24 +168,26 @@
 			isa = PBXGroup;
 			children = (
 				6E691A4822521EF900E67891 /* Macro.h */,
-				6E691A302251FE1800E67891 /* NSString+ZPString.h */,
-				6E691A312251FE1800E67891 /* NSString+ZPString.m */,
-				6E691A3C2252143D00E67891 /* NSDate+ZPDate.h */,
-				6E691A3D2252143D00E67891 /* NSDate+ZPDate.m */,
-				6E691A4522521CA400E67891 /* NSTimer+ZPtimer.h */,
-				6E691A4622521CA400E67891 /* NSTimer+ZPtimer.m */,
-				6E691A392252121800E67891 /* NSDictionary+ZPDictionary.h */,
-				6E691A3A2252121800E67891 /* NSDictionary+ZPDictionary.m */,
-				6E691A332252062A00E67891 /* UITextField+ZPTextField.h */,
-				6E691A342252062A00E67891 /* UITextField+ZPTextField.m */,
-				6E691A362252115200E67891 /* UITextView+ZPTextView.h */,
-				6E691A372252115200E67891 /* UITextView+ZPTextView.m */,
-				6E691A4222521B3A00E67891 /* UIButton+ZPButton.h */,
-				6E691A4322521B3A00E67891 /* UIButton+ZPButton.m */,
-				6E3533EB2253312700FD5030 /* UIImage+ZPImage.h */,
-				6E3533EC2253312700FD5030 /* UIImage+ZPImage.m */,
-				6E691A3F2252170400E67891 /* UIViewController+ZPViewController.h */,
-				6E691A402252170400E67891 /* UIViewController+ZPViewController.m */,
+				6E691A302251FE1800E67891 /* NSString+Extension.h */,
+				6E691A312251FE1800E67891 /* NSString+Extension.m */,
+				6E691A3C2252143D00E67891 /* NSDate+Extension.h */,
+				6E691A3D2252143D00E67891 /* NSDate+Extension.m */,
+				6E691A4522521CA400E67891 /* NSTimer+Extension.h */,
+				6E691A4622521CA400E67891 /* NSTimer+Extension.m */,
+				6E691A392252121800E67891 /* NSDictionary+Extension.h */,
+				6E691A3A2252121800E67891 /* NSDictionary+Extension.m */,
+				6E691A332252062A00E67891 /* UITextField+Extension.h */,
+				6E691A342252062A00E67891 /* UITextField+Extension.m */,
+				6E691A362252115200E67891 /* UITextView+Extension.h */,
+				6E691A372252115200E67891 /* UITextView+Extension.m */,
+				6E691A4222521B3A00E67891 /* UIButton+Extension.h */,
+				6E691A4322521B3A00E67891 /* UIButton+Extension.m */,
+				6E3533EB2253312700FD5030 /* UIImage+Extension.h */,
+				6E3533EC2253312700FD5030 /* UIImage+Extension.m */,
+				6E691A3F2252170400E67891 /* UIViewController+Extension.h */,
+				6E691A402252170400E67891 /* UIViewController+Extension.m */,
+				6E59D18123B72D8B00C12E01 /* UIView+Extension.h */,
+				6E59D18223B72D8B00C12E01 /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -317,18 +322,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E691A3B2252121800E67891 /* NSDictionary+ZPDictionary.m in Sources */,
+				6E691A3B2252121800E67891 /* NSDictionary+Extension.m in Sources */,
 				6E691A022251FC6100E67891 /* ViewController.m in Sources */,
-				6E691A4722521CA400E67891 /* NSTimer+ZPtimer.m in Sources */,
+				6E59D18323B72D8B00C12E01 /* UIView+Extension.m in Sources */,
+				6E691A4722521CA400E67891 /* NSTimer+Extension.m in Sources */,
 				6E691A0D2251FC6300E67891 /* main.m in Sources */,
-				6E691A352252062A00E67891 /* UITextField+ZPTextField.m in Sources */,
-				6E691A3E2252143D00E67891 /* NSDate+ZPDate.m in Sources */,
-				6E691A4422521B3A00E67891 /* UIButton+ZPButton.m in Sources */,
-				6E691A322251FE1800E67891 /* NSString+ZPString.m in Sources */,
+				6E691A352252062A00E67891 /* UITextField+Extension.m in Sources */,
+				6E691A3E2252143D00E67891 /* NSDate+Extension.m in Sources */,
+				6E691A4422521B3A00E67891 /* UIButton+Extension.m in Sources */,
+				6E691A322251FE1800E67891 /* NSString+Extension.m in Sources */,
 				6E6919FF2251FC6100E67891 /* AppDelegate.m in Sources */,
-				6E3533ED2253312700FD5030 /* UIImage+ZPImage.m in Sources */,
-				6E691A412252170400E67891 /* UIViewController+ZPViewController.m in Sources */,
-				6E691A382252115200E67891 /* UITextView+ZPTextView.m in Sources */,
+				6E3533ED2253312700FD5030 /* UIImage+Extension.m in Sources */,
+				6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */,
+				6E691A382252115200E67891 /* UITextView+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

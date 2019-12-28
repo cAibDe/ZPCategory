@@ -1,5 +1,5 @@
 //
-//  UIButton+ZPButton.h
+//  UIButton+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^ActionBlock)(void);
-@interface UIButton (ZPButton)
+@interface UIButton (Extension)
 
 /**
  *  UIButton+Block

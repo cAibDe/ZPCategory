@@ -1,5 +1,5 @@
 //
-//  UIImage+ZPImage.h
+//  UIImage+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/2.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (ZPImage)
+@interface UIImage (Extension)
+
+#pragma mark - 图片的颜色
 
 /**
  返回相片的主要颜色

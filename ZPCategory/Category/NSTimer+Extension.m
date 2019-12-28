@@ -1,14 +1,14 @@
 //
-//  NSTimer+ZPtimer.m
+//  NSTimer+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "NSTimer+ZPtimer.h"
+#import "NSTimer+Extension.h"
 
-@implementation NSTimer (ZPtimer)
+@implementation NSTimer (Extension)
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval
                                       block:(void (^)(void))block
                                      repeat:(BOOL)repeat{

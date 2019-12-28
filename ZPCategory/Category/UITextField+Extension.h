@@ -1,5 +1,5 @@
 //
-//  UITextField+ZPTextField.h
+//  UITextField+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITextField (ZPTextField)
+@interface UITextField (Extension)
 
 /**
  最大长度

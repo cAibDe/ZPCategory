@@ -1,5 +1,5 @@
 //
-//  NSDictionary+ZPDictionary.h
+//  NSDictionary+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (ZPDictionary)
+@interface NSDictionary (Extension)
 
 #pragma mark - 数据类型的Get
 

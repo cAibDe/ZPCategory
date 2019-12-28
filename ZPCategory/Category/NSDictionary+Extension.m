@@ -1,14 +1,14 @@
 //
-//  NSDictionary+ZPDictionary.m
+//  NSDictionary+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "NSDictionary+ZPDictionary.h"
+#import "NSDictionary+Extension.h"
 
-@implementation NSDictionary (ZPDictionary)
+@implementation NSDictionary (Extension)
 #pragma mark - 数据类型的Get
 
 /**

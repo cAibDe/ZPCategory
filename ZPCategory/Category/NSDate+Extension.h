@@ -1,5 +1,5 @@
 //
-//  NSDate+ZPDate.h
+//  NSDate+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -15,7 +15,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDate (ZPDate)
+@interface NSDate (Extension)
 
 /**
  *  转字符串

@@ -1,14 +1,22 @@
 //
-//  UIImage+ZPImage.m
+//  UIImage+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/2.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "UIImage+ZPImage.h"
+#import "UIImage+Extension.h"
 
-@implementation UIImage (ZPImage)
+@implementation UIImage (Extension)
+#pragma mark - 图片的颜色
+
+/**
+返回相片的主要颜色
+
+@param image 图片
+@return 返回的颜色色值
+*/
 + (UIColor*)mostColor:(UIImage *)image{
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1

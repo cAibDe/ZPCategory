@@ -1,15 +1,15 @@
 //
-//  NSString+ZPString.m
+//  NSString+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "NSString+ZPString.h"
+#import "NSString+Extension.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (ZPString)
+@implementation NSString (Extension)
 #pragma mark - 字符串宽度&&高度
 /**
 *

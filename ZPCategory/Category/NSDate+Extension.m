@@ -1,14 +1,14 @@
 //
-//  NSDate+ZPDate.m
+//  NSDate+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "NSDate+ZPDate.h"
+#import "NSDate+Extension.h"
 
-@implementation NSDate (ZPDate)
+@implementation NSDate (Extension)
 
 /**
  *  转字符串

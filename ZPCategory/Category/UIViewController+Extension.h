@@ -1,5 +1,5 @@
 //
-//  UIViewController+ZPViewController.h
+//  UIViewController+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, NativigationButtonType) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (ZPViewController)
+@interface UIViewController (Extension)
 
 #pragma mark - NavigationBar
 
@@ -121,6 +121,24 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)hiddenNavigationBar:(NavigationBarPosition)position
                      hidden:(BOOL)hidden;
+/**
+ *  添加多个按钮时
+ *
+ *  @param position 位置
+ *  @param array    buttonImageNameAndButtonTypeArray
+ *  @param target   目标
+ *  @param selector 响应方法
+ */
+
+- (void)setNavigationBar:(NavigationBarPosition)position withImageNameAndButtonTypeArray:(NSArray *)array target:(id)target selectors:(SEL)selector;
+
+/**
+ *  移除navigationbutton
+ *
+ *  @param position 位置
+ */
+- (void)removeNavigationBarBar:(NavigationBarPosition)position;
+#pragma mark - 页面 PUSH&POP
 
 /**
  *  跳转到指定的ViewController
@@ -140,23 +158,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)removePreviosViewControllerInNavigationControllers;
 
-/**
- *  添加多个按钮时
- *
- *  @param position 位置
- *  @param array    buttonImageNameAndButtonTypeArray
- *  @param target   目标
- *  @param selector 响应方法
- */
-
-- (void)setNavigationBar:(NavigationBarPosition)position withImageNameAndButtonTypeArray:(NSArray *)array target:(id)target selectors:(SEL)selector;
-
-/**
- *  移除navigationbutton
- *
- *  @param position 位置
- */
-- (void)removeNavigationBarBar:(NavigationBarPosition)position;
 #pragma mark - StoryBoard
 /**
  *  从storyboard中初始化ViewController

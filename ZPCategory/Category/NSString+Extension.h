@@ -1,5 +1,5 @@
 //
-//  NSString+ZPString.h
+//  NSString+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (ZPString)
+@interface NSString (Extension)
 
 #pragma mark - 字符串宽度&&高度
 /**

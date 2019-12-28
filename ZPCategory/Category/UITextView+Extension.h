@@ -1,5 +1,5 @@
 //
-//  UITextView+ZPTextView.h
+//  UITextView+Extension.h
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITextView (ZPTextView)
+@interface UITextView (Extension)
 
 @property (nonatomic, copy) NSString *placeHolder;
 

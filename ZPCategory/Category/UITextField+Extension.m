@@ -1,13 +1,13 @@
 //
-//  UITextField+ZPTextField.m
+//  UITextField+Extension.m
 //  ZPCategory
 //
 //  Created by 张鹏 on 2019/4/1.
 //  Copyright © 2019 c4ibD3. All rights reserved.
 //
 
-#import "UITextField+ZPTextField.h"
-#import "NSString+ZPString.h"
+#import "UITextField+Extension.h"
+#import "NSString+Extension.h"
 #import <objc/runtime.h>
 
 #define TextFieldLeftViewMinWidth   60  //左侧文字最小宽度，为了输入位置对齐
@@ -15,7 +15,7 @@
 static char maxLengthKey;
 static char canOnlyInputNumberKey;
 
-@implementation UITextField (ZPTextField)
+@implementation UITextField (Extension)
 #pragma mark - LeftView
 
 /**
