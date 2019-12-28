@@ -12,66 +12,39 @@
 @implementation NSString (ZPString)
 #pragma mark - 字符串宽度&&高度
 /**
- *  获取字符串的实际宽度
- *
- *  @param font   字体
- *  @param height 高度
- *
- *  @return 实际宽度
- */
-- (float)widthWithFont:(UIFont *)font height:(float)height{
-    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,nil];
-    CGSize actualsize =[self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, height) options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
-    return actualsize.width;
-}
-
-/**
- *  获取字符串的实际高度
- *
- *  @param font  字体
- *  @param width 宽度
- *
- *  @return 实际高度
- */
-- (float)heightWithFont:(UIFont *)font width:(float)width{
-    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,nil];
-    CGSize actualsize =[self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
-    return actualsize.height;
-}
-/**
- *  获取字符串的实际高度
- *
- *  @param font        字体
- *  @param width       宽度
- *  @param lineSpacing 行间距
- *
- *  @return 实际高度
- */
-- (float)heightWithFont:(UIFont *)font width:(float)width lineSpacing:(float)lineSpacing{
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:lineSpacing];//调整行间距
+*
+*  size             预计的大小
+*  font             字体大小
+*  alignment        对齐方式
+*  linebreakMode    显示模式
+*  lineSpace        行间距
+*
+*/
+- (CGSize)calculateRectWithSize:(CGSize)size
+                           font:(UIFont *)font
+                      alignment:(NSTextAlignment)alignment
+                  linebreakMode:(NSLineBreakMode)linebreakMode
+                      lineSpace:(CGFloat)lineSpace{
+    if (self.length == 0) {
+        return CGSizeZero;
+    }
     
-    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,paragraphStyle,NSParagraphStyleAttributeName,nil];
-    CGSize actualsize =[self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
-    return actualsize.height;
-}
-/**
- *  返回字体的实际大小
- *
- *  @param font  字体大小
- *  @param width 限制宽度
- *
- *  @return 实际大小
- */
-- (CGSize)sizeWithFont:(UIFont *)font width:(float)width lineSpacing:(float)lineSpacing{
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:lineSpacing];//调整行间距
+    paragraphStyle.lineBreakMode = linebreakMode;
+    paragraphStyle.alignment = alignment;
+    if (lineSpace > 0) {
+        paragraphStyle.lineSpacing = lineSpace;
+    }
+    NSDictionary *attributes = @{NSFontAttributeName : font,
+                                 NSParagraphStyleAttributeName : paragraphStyle};
     
-    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,paragraphStyle,NSParagraphStyleAttributeName,nil];
-    CGSize actualsize =[self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
-    return actualsize;
+    CGSize rectSize = [self boundingRectWithSize:size
+                                         options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingTruncatesLastVisibleLine
+                                      attributes:attributes
+                                         context:NULL].size;
+    
+    return CGSizeMake(ceil(rectSize.width), ceil(rectSize.height));
 }
-
 #pragma mark - 字符串 正则表达式
 /**
  *  判断电话号码是否正确
@@ -277,23 +250,25 @@
 }
 #pragma mark - NSString->NSAttributedString
 /**
- *  转成NSAttributedString
- *
- *  @param lineSpacing 行间距
- *
- *  @return NSAttributedString
- */
-- (NSAttributedString *)toAttributeStringWithLineSpacing:(float)lineSpacing{
-    if ([self isBlankString]) {
-        return [[NSMutableAttributedString alloc] initWithString:@""];
-    }
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self];
+*  转成NSMutableAttributedString
+*
+*  @param string    字符串
+*  @param font      字体
+*  @param lineSpace 行间距
+*
+*  @return NSAttributedString
+*/
+- (NSMutableAttributedString *)toAttributeStringWithString:(NSString *)string
+                                                      font:(UIFont *)font
+                                                 lineSpace:(CGFloat)lineSpace{
+    NSMutableAttributedString *attStr =  [[NSMutableAttributedString alloc] initWithString:string];
+    [attStr addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, [string length])];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:lineSpacing];//调整行间距
+    paragraphStyle.lineSpacing = lineSpace; // 调整行间距
+    NSRange range = NSMakeRange(0, [string length]);
+    [attStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
     
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self length])];
-    
-    return attributedString;
+    return attStr;
 }
 #pragma mark - NSString 计算字节长度
 - (NSUInteger)charactorNumber{

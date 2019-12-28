@@ -65,7 +65,12 @@ static char canOnlyInputNumberKey;
         minWidth = TextFieldLeftViewMinWidth;
     }
     
-    CGFloat width = [text widthWithFont:self.font height:self.frame.size.height]+10;
+    CGFloat width = [text calculateRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height)
+                                           font:self.font
+                                      alignment:NSTextAlignmentLeft
+                                  linebreakMode:NSLineBreakByWordWrapping
+                                      lineSpace:0.0].width + 10.0;
+    
     if (width < minWidth) {
         width = minWidth;
     }
@@ -86,7 +91,12 @@ static char canOnlyInputNumberKey;
  *  @param text 文字
  */
 - (void)setRightViewWithText:(NSString *)text{
-    UILabel *rightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, [text widthWithFont:self.font height:self.frame.size.height]+10, self.frame.size.height)];
+    CGFloat width = [text calculateRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height)
+                                           font:self.font
+                                      alignment:NSTextAlignmentLeft
+                                  linebreakMode:NSLineBreakByWordWrapping
+                                      lineSpace:0.0].width + 10.0;
+    UILabel *rightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, width, self.frame.size.height)];
     rightLabel.font = self.font;
     rightLabel.text = text;
     
@@ -191,7 +201,11 @@ static char canOnlyInputNumberKey;
         minWidth = TextFieldLeftViewMinWidth;
     }
     
-    CGFloat width = [text widthWithFont:self.font height:self.frame.size.height]+10;
+    CGFloat width = [text calculateRectWithSize:CGSizeMake(CGFLOAT_MAX, self.frame.size.height)
+                                           font:self.font
+                                      alignment:NSTextAlignmentLeft
+                                  linebreakMode:NSLineBreakByWordWrapping
+                                      lineSpace:0.0].width + 10.0;
     if (width < minWidth) {
         width = minWidth;
     }
