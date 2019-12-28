@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//UITextField底部下划线颜色
-#define kTextFieldBottomLineColor   [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0]
-//UITextField placeholder颜色
-#define kTextFieldPlaceHolderColor  [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1.0]
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (ZPTextField)
@@ -48,7 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param text  文字
  *  @param minWidth 最小宽度
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth;
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth;
 
 /**
  *  设置leftView为文字
@@ -57,7 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param minWidth 最小宽度
  *  @param color 占位文字颜色
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth color:(UIColor *)color;
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth
+                      color:(UIColor *)color;
 
 #pragma mark - RightView
 /**
@@ -79,7 +77,9 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param imageName 图片名称
  */
-- (void)setRightViewButtonWithImageName:(NSString *)imageName taget:(id)taget selector:(SEL)selector;
+- (void)setRightViewButtonWithImageName:(NSString *)imageName
+                                  taget:(id)taget
+                               selector:(SEL)selector;
 
 #pragma mark - Padding
 /**
@@ -112,7 +112,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  设置下划线出去左边的文字
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth withOutTextBottomLineColor:(UIColor *)color;
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth
+ withOutTextBottomLineColor:(UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END

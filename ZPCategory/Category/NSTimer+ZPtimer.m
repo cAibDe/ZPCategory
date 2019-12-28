@@ -9,9 +9,15 @@
 #import "NSTimer+ZPtimer.h"
 
 @implementation NSTimer (ZPtimer)
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval block:(void (^)(void))block repeat:(BOOL)repeat{
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval
+                                      block:(void (^)(void))block
+                                     repeat:(BOOL)repeat{
     void (^timerBlock)(void) = [block copy];
-    NSTimer *timer = [self scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(executeBlock:) userInfo:timerBlock repeats:repeat];
+    NSTimer *timer = [self scheduledTimerWithTimeInterval:timeInterval
+                                                   target:self
+                                                 selector:@selector(executeBlock:)
+                                                 userInfo:timerBlock
+                                                  repeats:repeat];
     return timer;
 }
 

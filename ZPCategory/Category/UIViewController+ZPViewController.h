@@ -59,7 +59,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param text     文字
  *  @param block    点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text touched:(void (^)(void))block;
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+                 touched:(void (^)(void))block;
 
 /**
  *  设置NavigationBar（图片）
@@ -68,7 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param imageName 图片名称
  *  @param block     点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withImageName:(NSString *)imageName touched:(void (^)(void))block;
+- (void)setNavigationBar:(NavigationBarPosition)position
+           withImageName:(NSString *)imageName
+                 touched:(void (^)(void))block;
 /**
  *  设置NavigationBar（图片）
  *
@@ -76,7 +80,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param imageName 图片名称
  *  @param block     点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withImageName:(NSString *)imageName spacing:(NSInteger)spacing touched:(void (^)(void))block;
+- (void)setNavigationBar:(NavigationBarPosition)position
+           withImageName:(NSString *)imageName
+                 spacing:(NSInteger)spacing
+                 touched:(void (^)(void))block;
 
 /**
  *  设置NavigationBar（文字）
@@ -86,7 +93,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param color    文字颜色
  *  @param block    点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text withColor:(UIColor *)color touched:(void (^)(void))block;
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+               withColor:(UIColor *)color
+                 touched:(void (^)(void))block;
 
 /**
  *  设置NavigationBar（文字）
@@ -97,7 +107,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param font     字体
  *  @param block    点击后执行的代码
  */
-- (void)setNavigationBar:(NavigationBarPosition)position withText:(NSString *)text withColor:(UIColor *)color withFont:(UIFont *)font touched:(void (^)(void))block;
+- (void)setNavigationBar:(NavigationBarPosition)position
+                withText:(NSString *)text
+               withColor:(UIColor *)color
+                withFont:(UIFont *)font
+                 touched:(void (^)(void))block;
 
 /**
  *  设置NavigationBar隐藏或显示
@@ -105,7 +119,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param position 位置
  *  @param hidden   YES：隐藏 NO：显示
  */
-- (void)hiddenNavigationBar:(NavigationBarPosition)position hidden:(BOOL)hidden;
+- (void)hiddenNavigationBar:(NavigationBarPosition)position
+                     hidden:(BOOL)hidden;
 
 /**
  *  跳转到指定的ViewController

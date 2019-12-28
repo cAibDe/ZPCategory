@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param repeat 是否重复
  @return timer 定时器
  */
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval block:(void (^)(void))block repeat:(BOOL)repeat;
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval
+                                      block:(void (^)(void))block
+                                     repeat:(BOOL)repeat;
 
 @end
 

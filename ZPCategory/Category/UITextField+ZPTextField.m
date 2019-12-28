@@ -49,8 +49,11 @@ static char canOnlyInputNumberKey;
  *  @param text  文字
  *  @param minWidth 最小宽度
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth{
-    [self setLeftViewWithText:text minWidth:minWidth color:[UIColor colorWithRed:215/255.0 green:12/255.0 blue:37/255.0 alpha:1.0]];
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth{
+    [self setLeftViewWithText:text
+                     minWidth:minWidth
+                        color:[UIColor colorWithRed:215/255.0 green:12/255.0 blue:37/255.0 alpha:1.0]];
 }
 
 /**
@@ -60,7 +63,9 @@ static char canOnlyInputNumberKey;
  *  @param minWidth 最小宽度
  *  @param color 占位文字颜色
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth color:(UIColor *)color{
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth
+                      color:(UIColor *)color{
     if (minWidth <= 0) {
         minWidth = TextFieldLeftViewMinWidth;
     }
@@ -75,7 +80,7 @@ static char canOnlyInputNumberKey;
         width = minWidth;
     }
     
-    UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, width, self.frame.size.height)];
+    UILabel *leftLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, width, self.frame.size.height)];
     leftLabel.font = self.font;
     leftLabel.text = text;
     leftLabel.textColor = color;
@@ -113,7 +118,6 @@ static char canOnlyInputNumberKey;
     
     [self layoutIfNeeded];
     UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
-    //    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.height, self.frame.size.height)];
     UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(img.frame)+8, self.frame.size.height)];
     
     img.frame = CGRectMake((rightView.frame.size.width - CGRectGetWidth(img.frame)) / 2, (rightView.frame.size.height - CGRectGetHeight(img.frame)) / 2, CGRectGetWidth(img.frame), CGRectGetHeight(img.frame));
@@ -129,7 +133,9 @@ static char canOnlyInputNumberKey;
  *
  *  @param imageName 图片名称
  */
-- (void)setRightViewButtonWithImageName:(NSString *)imageName taget:(id)taget selector:(SEL)selector{
+- (void)setRightViewButtonWithImageName:(NSString *)imageName
+                                  taget:(id)taget
+                               selector:(SEL)selector{
     [self layoutIfNeeded];
     UIImage * img = [UIImage imageNamed:imageName];
     UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.rightView.frame.size.height, self.rightView.frame.size.height)];
@@ -196,7 +202,9 @@ static char canOnlyInputNumberKey;
 /**
  *  设置下划线出去左边的文字
  */
-- (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth withOutTextBottomLineColor:(UIColor *)color{
+- (void)setLeftViewWithText:(NSString *)text
+                   minWidth:(CGFloat)minWidth
+ withOutTextBottomLineColor:(UIColor *)color{
     if (minWidth <= 0) {
         minWidth = TextFieldLeftViewMinWidth;
     }
