@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSNumber+Extension.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textfield;
@@ -19,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+ 
+    NSLog(@"%@",@(2.50).zp_description);
 }
 
 

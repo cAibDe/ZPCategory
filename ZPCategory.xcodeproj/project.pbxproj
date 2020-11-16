@@ -25,6 +25,7 @@
 		6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A402252170400E67891 /* UIViewController+Extension.m */; };
 		6E691A4422521B3A00E67891 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4322521B3A00E67891 /* UIButton+Extension.m */; };
 		6E691A4722521CA400E67891 /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A4622521CA400E67891 /* NSTimer+Extension.m */; };
+		6E83E167256262B60090F02E /* NSNumber+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83E166256262B60090F02E /* NSNumber+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		6E691A4522521CA400E67891 /* NSTimer+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Extension.h"; sourceTree = "<group>"; };
 		6E691A4622521CA400E67891 /* NSTimer+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Extension.m"; sourceTree = "<group>"; };
 		6E691A4822521EF900E67891 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		6E83E165256262B60090F02E /* NSNumber+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Extension.h"; sourceTree = "<group>"; };
+		6E83E166256262B60090F02E /* NSNumber+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				6E691A4822521EF900E67891 /* Macro.h */,
 				6E691A302251FE1800E67891 /* NSString+Extension.h */,
 				6E691A312251FE1800E67891 /* NSString+Extension.m */,
+				6E83E165256262B60090F02E /* NSNumber+Extension.h */,
+				6E83E166256262B60090F02E /* NSNumber+Extension.m */,
 				6E691A3C2252143D00E67891 /* NSDate+Extension.h */,
 				6E691A3D2252143D00E67891 /* NSDate+Extension.m */,
 				6E691A4522521CA400E67891 /* NSTimer+Extension.h */,
@@ -331,6 +336,7 @@
 				6E691A3E2252143D00E67891 /* NSDate+Extension.m in Sources */,
 				6E691A4422521B3A00E67891 /* UIButton+Extension.m in Sources */,
 				6E691A322251FE1800E67891 /* NSString+Extension.m in Sources */,
+				6E83E167256262B60090F02E /* NSNumber+Extension.m in Sources */,
 				6E6919FF2251FC6100E67891 /* AppDelegate.m in Sources */,
 				6E3533ED2253312700FD5030 /* UIImage+Extension.m in Sources */,
 				6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */,
