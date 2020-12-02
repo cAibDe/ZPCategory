@@ -49,6 +49,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSArray *)getFirstAndLastDayOfThisMonthWithNsDate:(NSDate *)date;
 
+/// UTC时间转成当地的时间
+/// @param UTCTime 国际时间
+/// @param needDateFormatter 需要的时间格式
++ (NSString *)currentAreaTimeWitthUTCTime:(NSString *)UTCTime
+                        needDateFormatter:(NSString *)needDateFormatter;
+
 @end
 
 NS_ASSUME_NONNULL_END

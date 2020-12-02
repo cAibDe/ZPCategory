@@ -19,7 +19,6 @@
 		6E691A222251FC6300E67891 /* ZPCategoryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A212251FC6300E67891 /* ZPCategoryUITests.m */; };
 		6E691A322251FE1800E67891 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A312251FE1800E67891 /* NSString+Extension.m */; };
 		6E691A352252062A00E67891 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A342252062A00E67891 /* UITextField+Extension.m */; };
-		6E691A382252115200E67891 /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A372252115200E67891 /* UITextView+Extension.m */; };
 		6E691A3B2252121800E67891 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3A2252121800E67891 /* NSDictionary+Extension.m */; };
 		6E691A3E2252143D00E67891 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A3D2252143D00E67891 /* NSDate+Extension.m */; };
 		6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E691A402252170400E67891 /* UIViewController+Extension.m */; };
@@ -70,8 +69,6 @@
 		6E691A312251FE1800E67891 /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		6E691A332252062A00E67891 /* UITextField+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
 		6E691A342252062A00E67891 /* UITextField+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
-		6E691A362252115200E67891 /* UITextView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extension.h"; sourceTree = "<group>"; };
-		6E691A372252115200E67891 /* UITextView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extension.m"; sourceTree = "<group>"; };
 		6E691A392252121800E67891 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		6E691A3A2252121800E67891 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		6E691A3C2252143D00E67891 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
@@ -135,6 +132,7 @@
 		6E6919FC2251FC6100E67891 /* ZPCategory */ = {
 			isa = PBXGroup;
 			children = (
+				6E691A4822521EF900E67891 /* Macro.h */,
 				6E691A2F2251FD4600E67891 /* Category */,
 				6E6919FD2251FC6100E67891 /* AppDelegate.h */,
 				6E6919FE2251FC6100E67891 /* AppDelegate.m */,
@@ -170,7 +168,6 @@
 		6E691A2F2251FD4600E67891 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				6E691A4822521EF900E67891 /* Macro.h */,
 				6E691A302251FE1800E67891 /* NSString+Extension.h */,
 				6E691A312251FE1800E67891 /* NSString+Extension.m */,
 				6E83E165256262B60090F02E /* NSNumber+Extension.h */,
@@ -183,8 +180,6 @@
 				6E691A3A2252121800E67891 /* NSDictionary+Extension.m */,
 				6E691A332252062A00E67891 /* UITextField+Extension.h */,
 				6E691A342252062A00E67891 /* UITextField+Extension.m */,
-				6E691A362252115200E67891 /* UITextView+Extension.h */,
-				6E691A372252115200E67891 /* UITextView+Extension.m */,
 				6E691A4222521B3A00E67891 /* UIButton+Extension.h */,
 				6E691A4322521B3A00E67891 /* UIButton+Extension.m */,
 				6E3533EB2253312700FD5030 /* UIImage+Extension.h */,
@@ -340,7 +335,6 @@
 				6E6919FF2251FC6100E67891 /* AppDelegate.m in Sources */,
 				6E3533ED2253312700FD5030 /* UIImage+Extension.m in Sources */,
 				6E691A412252170400E67891 /* UIViewController+Extension.m in Sources */,
-				6E691A382252115200E67891 /* UITextView+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

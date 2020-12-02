@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 			一个扩展方法的总结
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/ZPCategory"
+  spec.homepage     = "https://github.com/cAibDe/ZPCategory"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 

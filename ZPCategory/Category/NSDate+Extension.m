@@ -76,5 +76,28 @@
     return [NSArray arrayWithObjects:firstDay,lastDay, nil];
     
 }
-
+/// UTC时间转成当地的时间
+/// @param UTCTime 国际时间
+/// @param needDateFormatter 需要的时间格式
++ (NSString *)currentAreaTimeWitthUTCTime:(NSString *)UTCTime
+                        needDateFormatter:(NSString *)needDateFormatter{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //输入格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    NSTimeZone *localTimeZone = [NSTimeZone localTimeZone];
+    [dateFormatter setTimeZone:localTimeZone];
+    NSDate *dateFormatted = [dateFormatter dateFromString:UTCTime];
+    //输出格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:dateFormatted];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [formatter dateFromString:dateString];
+    
+    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+    [dateFormatter1 setDateFormat:needDateFormatter];
+    NSString *strDate = [dateFormatter1 stringFromDate:date];
+    return strDate;
+}
 @end
