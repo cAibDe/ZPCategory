@@ -2,28 +2,16 @@
 
 ## 目录
 ***
-1. **宏文件**
-2. **NSString**
-3. **NSDate**
-4. **NSTimer**
-5. **NSDictionary**
-6. **UITextField**
-7. **UITextView**
-8. **UIButton**
-9. **UIImage**
-10. **UIViewController**  
-
-***  
-
-## 宏文件
-这个文件中主要有以下几个功能：  
-1. 开发环境和正式环境的配置；  
-2. 项目中集成的第三方的配置；  
-3. RGB颜色；  
-4. 弱引用self；  
-5. 屏幕宽&高；  
-6. 状态栏&Tabbar&SafeArea的数值；  
-7. 设备的判断；  
+1. **NSString**
+2. **NSDate**
+3. **NSTimer**
+4. **NSDictionary**
+5. **UITextField**
+6. **UIButton**
+7. **UIImage**
+8. **UIViewController**  
+9. **UIImage** 
+10. **NSNumber** 
 ***  
 
 ## NSString  
@@ -44,6 +32,17 @@
                       alignment:(NSTextAlignment)alignment
                   linebreakMode:(NSLineBreakMode)linebreakMode
                       lineSpace:(CGFloat)lineSpace;
+```
+```objc
+/// 计算文字的size
+/// @param size 预计的计算的size
+/// @param text 文字
+/// @param numberOfLine 需要计算的行数
+/// @param font 字体
++ (CGSize)calcTextSizeWithSize:(CGSize)size
+                          text:(id)text
+                  numberOfLine:(NSInteger)numberOfLine
+                          font:(UIFont *)font;
 ```
 ### 字符串 正则表达式  
 1.判断是不是手机号
@@ -179,6 +178,14 @@
 + (NSArray *)getFirstAndLastDayOfThisMonthWithNsDate:(NSDate *)date;
 ```  
 ***  
+5.UTC时间转成当地的时间  
+```objc
+/// UTC时间转成当地的时间
+/// @param UTCTime 国际时间
+/// @param needDateFormatter 需要的时间格式
++ (NSString *)currentAreaTimeWitthUTCTime:(NSString *)UTCTime
+                        needDateFormatter:(NSString *)needDateFormatter;
+```
 ## NSTimer
 1.用block的方式穿件定时器
 ```objc
@@ -356,15 +363,6 @@
 - (void)setLeftViewWithText:(NSString *)text minWidth:(CGFloat)minWidth withOutTextBottomLineColor:(UIColor *)color;
 ```
 ***
-## UITextView
-
-### 增加 placeHolder & placeHolderFont 属性
-```objc
-@property (nonatomic, copy) NSString *placeHolder;
-
-@property (nonatomic, strong) UIFont *placeHolderFont;
-```
-***
 ## UButton
 ### 点击方式换成block方式
 ```objc
@@ -540,4 +538,22 @@
  *  @return ViewController实例
  */
 + (instancetype)viewControllerFromStoryBoard:(NSString *)storyBoardName withIdentifier:(NSString *)identifier;
+```  
+***
+## UIImage
+```objc
+/**
+ 返回相片的主要颜色
+
+ @param image 图片
+ @return 返回的颜色色值
+ */
++ (UIColor*)mostColor:(UIImage *)image;
+```  
+***
+## NSNumber  
+```objc
+/// 去掉浮点型的不必要的0
+- (NSString *)zp_description;
 ```
+
