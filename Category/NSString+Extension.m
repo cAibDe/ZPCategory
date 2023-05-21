@@ -168,6 +168,65 @@ CGSize calcTextSize(CGSize fitsSize, id text, NSInteger numberOfLines, UIFont *f
     
     return rect.size;
 }
+/// 计算标签数组的高度
+/// - Parameters:
+///   - word: 标签数组
+///   - maxWidth: 最大宽度
+///   - verticalMargin: 列间距
+///   - horizontalMargin: 行间距
+///   - itemMargin: 单个标签的间距
+///   - font: 字体大小
+///   - lineHeight: 行高
++ (CGFloat)getTotalHeightWithWords:(NSArray *)word
+                          maxWidth:(CGFloat)maxWidth
+                    verticalMargin:(CGFloat)verticalMargin
+                  horizontalMargin:(CGFloat)horizontalMargin
+                        itemMargin:(CGFloat)itemMargin
+                              font:(UIFont *)font
+                        lineHeight:(CGFloat)lineHeight{
+    CGFloat height = 0;
+    CGFloat lineWidth = 0;
+    int line = ([word count] == 0) ? 0 : 1;
+    if (line == 0) {
+        return 0;
+    }
+    for (int i = 0 ; i< word.count ; i ++) {
+        NSString *tagString = word[i];
+        CGFloat tagStringWidth = [tagString getSizeWithFont:font maxSize:CGSizeMake(CGFLOAT_MAX, 100)].width;
+        CGFloat width = tagStringWidth + itemMargin*2;
+        if (i != 0) {
+            lineWidth += verticalMargin;
+        }
+        lineWidth += width;
+        
+        if (lineWidth > maxWidth) {
+            line++;
+            lineWidth = 0;
+            if (i != 0) {
+                lineWidth += verticalMargin;
+            }
+            lineWidth += width;
+        }
+    }
+    height += ((line * lineHeight) + ((line - 1)*horizontalMargin));
+    return height;
+}
+/// 计算文字size
+/// - Parameters:
+///   - font: 字体
+///   - maxSize: 最大宽度
+- (CGSize)getSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          font, NSFontAttributeName,
+                                          nil];
+    
+    CGRect textFrame = [self boundingRectWithSize:maxSize
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:attributesDictionary
+                                          context:nil];
+    CGSize stringSize = textFrame.size;
+    return stringSize;
+}
 #pragma mark - 字符串 正则表达式
 /**
  *  判断电话号码是否正确

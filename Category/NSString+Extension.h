@@ -36,6 +36,22 @@ NS_ASSUME_NONNULL_BEGIN
                   numberOfLine:(NSInteger)numberOfLine
                           font:(UIFont *)font;
 
+/// 计算标签数组的高度
+/// - Parameters:
+///   - word: 标签数组
+///   - maxWidth: 最大宽度
+///   - verticalMargin: 列间距
+///   - horizontalMargin: 行间距
+///   - itemMargin: 单个标签的间距
+///   - font: 字体大小
+///   - lineHeight: 行高
++ (CGFloat)getTotalHeightWithWords:(NSArray *)word
+                          maxWidth:(CGFloat)maxWidth
+                    verticalMargin:(CGFloat)verticalMargin
+                  horizontalMargin:(CGFloat)horizontalMargin
+                        itemMargin:(CGFloat)itemMargin
+                              font:(UIFont *)font
+                        lineHeight:(CGFloat)lineHeight;
 
 #pragma mark - 字符串 正则表达式
 
